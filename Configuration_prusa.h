@@ -36,7 +36,7 @@
 
 // Steps per unit {X,Y,Z,E}
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,140}
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,830}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,830}// E-steps for Bondtech BMG
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {100,100,3200/8,560}
 
 // Endstop inverting
@@ -335,7 +335,7 @@
 
 // Unload filament commands
 #define UNLOAD_FILAMENT_0 "M83"
-#define UNLOAD_FILAMENT_1 "G1 E-82 F7000" //Bondtech BMG
+#define UNLOAD_FILAMENT_1 "G1 E-82 F7000" //Distance for Bondtech BMG
 
 /*------------------------------------
  CHANGE FILAMENT SETTINGS
@@ -348,10 +348,10 @@
 #define FILAMENTCHANGE_YPOS 0
 #define FILAMENTCHANGE_ZADD 2
 #define FILAMENTCHANGE_FIRSTRETRACT -2
-#define FILAMENTCHANGE_FINALRETRACT -80
+#define FILAMENTCHANGE_FINALRETRACT -82//Distance for Bondtech BMG
 
 #define FILAMENTCHANGE_FIRSTFEED 70 //E distance in mm for fast filament loading sequence used used in filament change (M600)
-#define FILAMENTCHANGE_FINALFEED 25 //E distance in mm for slow filament loading sequence used used in filament change (M600) and filament load (M701) 
+#define FILAMENTCHANGE_FINALFEED 50 //E distance in mm for slow filament loading sequence used used in filament change (M600) and filament load (M701) 
 #define FILAMENTCHANGE_RECFEED 5
 
 #define FILAMENTCHANGE_XYFEED 50
@@ -487,16 +487,16 @@
 #define PLA_PREHEAT_HPB_TEMP 60
 #define PLA_PREHEAT_FAN_SPEED 0
 
-#define ABS_PREHEAT_HOTEND_TEMP 255
-#define ABS_PREHEAT_HPB_TEMP 90
+#define ABS_PREHEAT_HOTEND_TEMP 255//ASA
+#define ABS_PREHEAT_HPB_TEMP 90//ASA
 #define ABS_PREHEAT_FAN_SPEED 0
 
-#define HIPS_PREHEAT_HOTEND_TEMP 260
-#define HIPS_PREHEAT_HPB_TEMP 90
+#define HIPS_PREHEAT_HOTEND_TEMP 260//CPE
+#define HIPS_PREHEAT_HPB_TEMP 90//CPE
 #define HIPS_PREHEAT_FAN_SPEED 0
 
-#define PP_PREHEAT_HOTEND_TEMP 285
-#define PP_PREHEAT_HPB_TEMP 0
+#define PP_PREHEAT_HOTEND_TEMP 285//Nozzle change
+#define PP_PREHEAT_HPB_TEMP 0//Nozzle change
 #define PP_PREHEAT_FAN_SPEED 0
 
 #define PET_PREHEAT_HOTEND_TEMP 240
