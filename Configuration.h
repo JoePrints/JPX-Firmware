@@ -6,14 +6,26 @@
 #define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
 
+//-//
+#include <avr/pgmspace.h>
+extern const uint16_t _nPrinterType;
+extern const char _sPrinterName[] PROGMEM;
+extern const uint16_t _nPrinterMmuType;
+extern const char _sPrinterMmuName[] PROGMEM;
+extern uint16_t nPrinterType;
+extern PGM_P sPrinterName;
+
 // Firmware version
-#define FW_VERSION "3.7.1"
-#define FW_COMMIT_NR   2266
+#define FW_VERSION "3.8.0"
+#define FW_COMMIT_NR   2684
 // FW_VERSION_UNKNOWN means this is an unofficial build.
 // The firmware should only be checked into github with this symbol.
 #define FW_DEV_VERSION FW_VERSION_GOLD
-#define FW_REPOSITORY "ironjoe13"
+#define FW_REPOSITORY "Unknown"
 #define FW_VERSION_FULL FW_VERSION "-" STR(FW_COMMIT_NR)
+
+// G-code language level
+#define GCODE_LEVEL 1
 
 // Debug version has debugging enabled (the symbol DEBUG_BUILD is set).
 // The debug build may be a bit slower than the non-debug build, therefore the debug build should
@@ -58,7 +70,7 @@
 //#define STRING_VERSION "1.0.2"
 
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Joe_Prints)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
